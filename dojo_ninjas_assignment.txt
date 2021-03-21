@@ -1,0 +1,72 @@
+from dojo_ninjas_app.models import *
+
+dojo.objects.create(name="dojoLA", city="Los Angeles", state = "Califorina")
+
+dojo.objects.create(name="dojoNY", city="New York", state = "New York")
+
+dojo.objects.create(name="dojoDA", city="Dallas", state = "Texas")
+
+c = dojo.objects.get(id=1)
+
+c.delete()
+
+c = dojo.objects.get(id=2)
+
+c.delete()
+
+c = dojo.objects.get(id=3)
+
+c.delete()
+
+dojo.objects.create(name="dojoLA", city="Los Angeles", state = "Califorina")
+
+dojo.objects.create(name="dojoNY", city="New York", state = "New York")
+
+dojo.objects.create(name="dojoDA", city="Dallas", state = "Texas")
+
+dojoLA = dojo.objects.get(id=4)
+
+dojoNY = dojo.objects.get(id=5)
+
+dojoDA = dojo.objects.get(id=6)
+
+dojo_first = dojo.objects.first()
+
+dojo_last = dojo.objects.last()
+
+ninjaJohn = ninja.objects.create(first_name="John", last_name="Smith", dojo = dojoLA)
+
+ninjaBill = ninja.objects.create(first_name="Bill", last_name="Man", dojo = dojoLA)
+
+ninjaMark = ninja.objects.create(first_name="Mark", last_name="White", dojo = dojoLA)
+
+ninjaNaomi = ninja.objects.create(first_name="Naomi", last_name="Dill", dojo = dojoNY)
+
+ninjaPeter = ninja.objects.create(first_name="Peter", last_name="Fence", dojo = dojoNY)
+
+ninjaTim = ninja.objects.create(first_name="Tim", last_name="Miller", dojo = dojoNY)
+
+ninjaEdith = ninja.objects.create(first_name="Edith", last_name="Stone", dojo = dojoDA)
+
+ninjaMargaret = ninja.objects.create(first_name="Margaret", last_name="Wheeler", dojo = dojoDA)
+
+ninjaTeresa = ninja.objects.create(first_name="Teresa", last_name="Blue", dojo = dojoDA)
+
+dojo_first.ninjas.all()
+
+dojo_last.ninjas.all()
+
+ninja_last = ninja.objects.last()
+
+ninja_last.dojo
+
+exit()
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+
+from dojo_ninjas_app.models import *
+
+dojo.objects.create(name="dojoBP", city="Budapest", state="Pest")
